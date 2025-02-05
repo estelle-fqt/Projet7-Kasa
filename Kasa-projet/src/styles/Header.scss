@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  .header-logo {
+    max-height: 68px;
+    max-width: 210px;
+  }
+
+  .header-nav {
+    display: flex;
+    gap: 30px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .header-link {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}

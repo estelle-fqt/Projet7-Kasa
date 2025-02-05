@@ -1,0 +1,28 @@
+.banner {
+  width: 90%;
+  height: 223px;
+  border-radius: 25px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../assets/imgHomePage.png");
+  background-size: cover;
+  background-position: center;
+
+  img {
+    object-fit: cover;
+  }
+
+  p {
+    // ajouter contour lettres 1px
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 42px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  }
+}
