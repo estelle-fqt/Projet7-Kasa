@@ -1,18 +1,29 @@
-import Card from "../components/Card";
-import { locationList } from "../datas/data.json";
+//charge les données et transmission à cards.jsx
 
+import Card from "../components/Card";
+import data from "../datas/data.json";
 import "../styles/CardsContainer.scss";
 
+import { useEffect, useState } from "react";
+
 function CardsContainer() {
+  const [locations, setLocations] = useState([]);
+
+  //charge les données json
+  useEffect(() => {
+    setLocations(data);
+  }, []);
+
   return (
     <div className="cards-container">
-      <ul>
-        {locationList.map(({ id, cover, title }) => (
-          <div key={id}>
-            <Card cover={cover} title={title} />
-          </div>
-        ))}
-      </ul>
+      {locations.map((location) => (
+        <Card
+          className="card"
+          key={location.id}
+          title={location.title}
+          cover={location.cover}
+        />
+      ))}
     </div>
   );
 }

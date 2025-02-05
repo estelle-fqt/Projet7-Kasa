@@ -1,14 +1,22 @@
 import "../styles/Card.scss";
-import "../datas/data.json";
+import "react";
+import "prop-types";
+import PropTypes from "prop-types";
 
 function Card({ title, cover }) {
   return (
-    <li className="card">
+    <article className="card">
       <img src={cover} alt={title} className="card-cover"></img>
-      <p className="card-title">{title}</p>
-      {title}
-    </li>
+      <div className="card-content">
+        <p className="card-title">{title}</p>
+      </div>
+    </article>
   );
 }
+
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  cover: PropTypes.string.isRequired,
+};
 
 export default Card;
