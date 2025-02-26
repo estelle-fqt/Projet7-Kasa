@@ -1,13 +1,20 @@
+import PropTypes from "prop-types";
 import "../styles/Banner.scss";
 
-function Banner() {
+function Banner({ imageUrl, text }) {
   return (
     <>
-      <div className="banner">
-        <p>Chez vous, partout et ailleurs</p>
+      <div className="banner" style={{ backgroundImage: `url(${imageUrl})` }}>
+        {text && <p>{text}</p>}
       </div>
     </>
   );
 }
+
+// validation des props avec PropTypes
+Banner.propTypes = {
+  imageUrl: PropTypes.string.isRequired,
+  text: PropTypes.string,
+};
 
 export default Banner;

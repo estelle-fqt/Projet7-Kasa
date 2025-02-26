@@ -20,6 +20,7 @@ function CardsContainer() {
         <Card
           className="card"
           key={location.id}
+          id={location.id}
           title={location.title}
           cover={location.cover}
         />

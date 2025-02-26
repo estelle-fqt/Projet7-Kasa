@@ -1,0 +1,60 @@
+.accomodation-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  border: solid 5px red;
+}
+
+.accomodation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  border: solid blue;
+
+  .accomodation-info {
+    border: solid green;
+    h1 {
+      font-size: 28px;
+      margin: 0;
+      color: #ff6060;
+    }
+    /*.location {
+    }*/
+    .tags {
+      margin-top: 10px;
+      .tag {
+        background: #ff6060;
+        color: white;
+        padding: 10px;
+        border-radius: 20px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .host-info {
+    border: solid yellow;
+    width: 167px;
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-wrap: wrap;
+
+    .host-name {
+      color: #ff6060;
+      font-size: 18px;
+      font-weight: 500;
+      border: solid;
+      text-align: center;
+      margin-right: 5px;
+    }
+
+    .host-picture {
+      width: 64px;
+      height: 64px;
+      border-radius: 70px;
+    }
+  }
+}
