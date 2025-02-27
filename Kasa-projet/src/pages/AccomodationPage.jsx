@@ -63,7 +63,7 @@ function AccomodationPage() {
                 alt={host.name}
               />
             </div>
-            <Rating rating={rating} />
+            <Rating className="rating" rating={rating} />
           </div>
         </div>
 

@@ -1,6 +1,9 @@
 .carousel {
   position: relative;
   height: 415px;
+  @media (max-width: 376px) {
+    height: 255px;
+  }
 }
 
 .carousel-image-wrapper {
@@ -15,6 +18,10 @@
   object-fit: cover;
   object-position: center;
   border-radius: 25px;
+  @media (max-width: 376px) {
+    height: 255px;
+    border-radius: 10px;
+  }
 }
 
 .carousel-arrow {
@@ -23,14 +30,29 @@
   background: none;
   top: 40%;
   cursor: pointer;
+  @media (max-width: 376px) {
+    top: 50%;
+  }
 }
 
 .carousel-arrow.left {
   left: 10px;
+  img {
+    @media (max-width: 376px) {
+      width: 14px;
+      height: 24px;
+    }
+  }
 }
 
 .carousel-arrow.right {
   right: 10px;
+  img {
+    @media (max-width: 376px) {
+      width: 14px;
+      height: 24px;
+    }
+  }
 }
 
 .numbering {
@@ -38,4 +60,7 @@
   bottom: 10px;
   right: 50%;
   color: white;
+  @media (max-width: 376px) {
+    right: 45%;
+  }
 }

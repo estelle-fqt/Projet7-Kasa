@@ -16,5 +16,15 @@
   }
   p {
     padding-bottom: 5px;
+
+    @media (max-width: 376px) {
+      font-size: 12px;
+      width: 130px;
+      height: 46px;
+      text-align: center;
+    }
+  }
+  @media (max-width: 376px) {
+    gap: 5px;
   }
 }

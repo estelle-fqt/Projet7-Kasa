@@ -3,25 +3,44 @@
   justify-content: space-between;
   align-items: center;
   margin: 30px 0;
+  @media (max-width: 376px) {
+    margin-top: 0;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
 
   .accomodation-info {
+    @media (max-width: 376px) {
+      width: 335px;
+      margin-top: 20px;
+    }
     h1 {
       font-weight: 500;
       font-size: 36px;
       margin: 0;
       color: #ff6060;
+      @media (max-width: 376px) {
+        font-size: 18px;
+      }
     }
     p {
       margin-top: 5px;
       font-weight: 500;
       font-size: 18px;
+      @media (max-width: 376px) {
+        margin-top: 10px;
+        font-size: 14px;
+      }
     }
     .tags {
       margin-top: 30px;
       height: 25px;
       display: flex;
       flex-direction: row;
-      align-items: center;
+      // align-items: center;
+      @media (max-width: 376px) {
+        margin-top: 10px;
+      }
       .tag {
         height: 25px;
         background: #ff6060;
@@ -34,6 +53,16 @@
         align-items: center;
         padding-right: 30px;
         padding-left: 30px;
+        @media (max-width: 376px) {
+          font-size: 10px;
+          border-radius: 5px;
+          padding-right: 10px;
+          padding-left: 10px;
+          // // margin: auto;
+          // //margin-left: 0;
+          // text-overflow: hidden;
+          // text-wrap: no-wrap;
+        }
       }
     }
   }
@@ -43,6 +72,26 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 20px;
+    @media (max-width: 376px) {
+      flex-direction: row-reverse;
+      width: 100%;
+      justify-content: space-between;
+      margin-top: 10px;
+      align-items: center;
+    }
+
+    .rating-stars {
+      @media (max-width: 376px) {
+        width: 98px;
+        height: 18px;
+      }
+    }
+    .star {
+      @media (max-width: 376px) {
+        width: 18px;
+        height: 18px;
+      }
+    }
   }
 
   .host-info {
@@ -52,14 +101,20 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 376px) {
+      width: 135.5px;
+      height: 33px;
+    }
 
     .host-name {
-      //flex-grow: 1;
       margin-right: 5px;
       color: #ff6060;
       font-size: 18px;
       font-weight: 500;
       text-align: end;
+      @media (max-width: 376px) {
+        font-size: 12px;
+      }
     }
 
     .host-picture {
@@ -67,6 +122,10 @@
       height: 64px;
       border-radius: 70px;
       margin-right: 5px;
+      @media (max-width: 376px) {
+        width: 32px;
+        height: 32px;
+      }
     }
   }
 }

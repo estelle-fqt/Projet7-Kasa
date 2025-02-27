@@ -1,8 +1,5 @@
 .cards-container {
-  //max-width: 1240px;
-  //width: 86%;
   height: 100%;
-  //margin: auto;
   margin-top: 30px;
   margin-bottom: 50px;
 
@@ -14,4 +11,11 @@
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   column-gap: 20px;
   row-gap: 25px;
+
+  @media (max-width: 376px) {
+    background: none;
+    padding: 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
 }

@@ -8,6 +8,10 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  @media (max-width: 376px) {
+    width: 335px;
+    height: 255px;
+  }
 }
 
 .card-cover {
