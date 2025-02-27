@@ -9,7 +9,7 @@ function AboutPage() {
     <>
       <Header />
       <Banner imageUrl={aboutPage} />
-      <Collapse />
+      <Collapse styleClass="about-collapse" />
       <Footer />
     </>
   );

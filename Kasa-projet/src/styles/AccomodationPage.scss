@@ -1,60 +1,72 @@
-.accomodation-container {
-  padding: 20px;
-  max-width: 1200px;
-  margin: auto;
-  border: solid 5px red;
-}
-
 .accomodation-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 0;
-  border: solid blue;
+  margin: 30px 0;
 
   .accomodation-info {
-    border: solid green;
     h1 {
-      font-size: 28px;
+      font-weight: 500;
+      font-size: 36px;
       margin: 0;
       color: #ff6060;
     }
-    /*.location {
-    }*/
+    p {
+      margin-top: 5px;
+      font-weight: 500;
+      font-size: 18px;
+    }
     .tags {
-      margin-top: 10px;
+      margin-top: 30px;
+      height: 25px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       .tag {
+        height: 25px;
         background: #ff6060;
         color: white;
-        padding: 10px;
         border-radius: 20px;
-        margin-right: 5px;
+        margin-right: 20px;
+        font-size: 14px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        padding-right: 30px;
+        padding-left: 30px;
       }
     }
   }
 
+  .host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+  }
+
   .host-info {
-    border: solid yellow;
     width: 167px;
     height: 64px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    text-wrap: wrap;
+    justify-content: space-between;
 
     .host-name {
+      //flex-grow: 1;
+      margin-right: 5px;
       color: #ff6060;
       font-size: 18px;
       font-weight: 500;
-      border: solid;
-      text-align: center;
-      margin-right: 5px;
+      text-align: end;
     }
 
     .host-picture {
       width: 64px;
       height: 64px;
       border-radius: 70px;
+      margin-right: 5px;
     }
   }
 }

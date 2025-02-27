@@ -1,35 +1,35 @@
 import { useParams } from "react-router-dom";
-//import { useNavigate } from "react-router-dom";
-//import { Navigate } from "react-router-dom";
 import data from "../datas/data.json";
 import "../styles/AccomodationPage.scss";
 import Header from "../components/Header";
 import Slideshow from "../components/Slideshow";
 import Rating from "../components/Rating";
+import Collapse from "../components/Collapse";
 import Footer from "../components/Footer";
-//import NotFoundPage from "../pages/NotFoundPage";
-//import { useEffect } from "react";
+import NotFoundPage from "./NotFoundPage";
 
 function AccomodationPage() {
   const { id } = useParams();
-  //const navigate = useNavigate();
-
   const accomodation = data.find((acc) => acc.id === id);
 
-  //si id n'existe pas = affiche page 404
+  //si id n'existe pas = affiche page 404 (if(!accomodation))
   if (accomodation === undefined) {
-    return "page erreur 404";
+    return <NotFoundPage />;
   }
   const {
     title,
     location,
-    //description,
-    //pictures,
+    description,
     host,
     rating,
-    //equipments,
+    equipments,
     tags,
   } = accomodation;
+
+  // sections dynamique pour collapse
+  const sectionsDescription = [{ title: "Description", content: description }];
+
+  const sectionsEquipments = [{ title: "Equipements", content: equipments }];
 
   return (
     <>
@@ -67,7 +67,22 @@ function AccomodationPage() {
           </div>
         </div>
 
-        {/* Description et equipements */}
+        {/* Collapses dynamiques Description et equipements */}
+        <div className="collapses-contain">
+          <div>
+            <Collapse
+              sections={sectionsDescription}
+              styleClass="accomodation-collapse"
+              isAccomodationPage={true}
+            />
+          </div>
+          <div>
+            <Collapse
+              sections={sectionsEquipments}
+              styleClass="accomodation-collapse"
+            />
+          </div>
+        </div>
       </div>
       <Footer />
     </>

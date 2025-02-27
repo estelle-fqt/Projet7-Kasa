@@ -28,7 +28,7 @@
   },
   {
     "id": "b9123946",
-    "title": "Magnifique appartement proche Canal Saint Martin",
+    "title": "Cozy loft on the canal Saint-Martin",
     "cover": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-1.jpg",
     "pictures": [
       "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-1-1.jpg",
@@ -40,7 +40,7 @@
     ],
     "description": "Profitez du charme de la vie parisienne dans un magnifique appartement. A 3 minutes à pied du Canl Saint Martin, vous serez proche des transports, mais également de nombreux commerces. L'appartement est tout équipé, et possède également un parking pour ceux qui souhaitent se déplacer en voiture.",
     "host": {
-      "name": "Della Case",
+      "name": "Alexandre dumas",
       "picture": "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/profile-picture-1.jpg"
     },
     "rating": "4",
