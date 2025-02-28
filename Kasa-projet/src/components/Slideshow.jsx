@@ -33,7 +33,14 @@ function Slideshow() {
   return (
     <div className="carousel">
       <div className="carousel-img-wrapper">
-        <img src={pictures[currentIndex]} alt="" className="carousel-img" />
+        {pictures.map((picture, index) => (
+          <img
+            key={index}
+            src={picture}
+            alt=""
+            className={`carousel-img ${index === currentIndex ? "active" : ""}`}
+          />
+        ))}{" "}
       </div>
       {pictures.length > 1 && (
         <>

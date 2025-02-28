@@ -4,13 +4,15 @@ import homeBanner from "../assets/imgHomePage.png";
 import CardsContainer from "../components/CardsContainer";
 import Footer from "../components/Footer";
 
-//import Layout from "../components/Layout";
-
 function Home() {
   return (
     <>
       <Header />
-      <Banner imageUrl={homeBanner} text={`Chez vous, partout et ailleurs`} />
+      <Banner
+        imageUrl={homeBanner}
+        text={`Chez vous, partout et ailleurs`}
+        opacity={0.6}
+      />
       <CardsContainer />
       <Footer />
     </>

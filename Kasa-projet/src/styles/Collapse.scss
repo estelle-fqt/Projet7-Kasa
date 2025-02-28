@@ -9,13 +9,11 @@
   align-items: center;
   padding-left: 7.5px;
   padding-right: 7.5px;
-
   @media (max-width: 376px) {
     height: 30px;
   }
 }
 
-//<p>
 .p-collapse {
   margin: auto;
   background-color: #f6f6f6;
@@ -25,21 +23,26 @@
   align-items: center;
   padding-left: 15px;
   padding-right: 15px;
+  margin-bottom: 30px;
 
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   transition: max-height 0.5s linear, opacity 0.3s linear;
 
-  margin-bottom: 30px;
   @media (max-width: 376px) {
     margin-bottom: 20px;
     font-size: 13px;
   }
 }
-
+.collapse.active img {
+  transform: rotate(180deg);
+}
+.rotate {
+  transition: transform 0.3s ease-in-out;
+}
 .open {
-  max-height: max-content; // a voir
+  max-height: 300px;
   opacity: 1;
 }
 
@@ -69,9 +72,6 @@
     width: 100%;
     margin-top: 20px;
   }
-}
-.collapse.active img {
-  transform: rotate(180deg);
 }
 
 // style page Accomodation

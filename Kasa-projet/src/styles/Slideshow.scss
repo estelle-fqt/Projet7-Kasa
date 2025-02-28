@@ -18,10 +18,16 @@
   object-fit: cover;
   object-position: center;
   border-radius: 25px;
+  position: absolute;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
   @media (max-width: 376px) {
     height: 255px;
     border-radius: 10px;
   }
+}
+.carousel-img.active {
+  opacity: 1;
 }
 
 .carousel-arrow {

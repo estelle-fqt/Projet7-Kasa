@@ -8,7 +8,7 @@ function AboutPage() {
   return (
     <>
       <Header />
-      <Banner imageUrl={aboutPage} />
+      <Banner imageUrl={aboutPage} opacity={0.3} />
       <Collapse styleClass="about-collapse" />
       <Footer />
     </>

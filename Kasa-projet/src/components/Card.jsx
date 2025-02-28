@@ -10,10 +10,7 @@ function Card({ title, cover, id }) {
       <article className="card">
         <img src={cover} alt={title} className="card-cover"></img>
         <div className="card-content">
-          <p className="card-title">
-            {title}
-            {id}
-          </p>
+          <p className="card-title">{title}</p>
         </div>
       </article>
     </Link>

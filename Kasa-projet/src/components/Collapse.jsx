@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import "../styles/Collapse.scss";
 import arrow from "../assets/arrowBack.png";
 import PropTypes from "prop-types";
 
-function Collapse({ sections, styleClass, isAccomodationPage }) {
-  //si aucun section fournie,valeurs /défaut, données des sections
+function Collapse({ sections, styleClass }) {
+  //si aucune section fournie,valeurs /défaut
   const defaultSections = [
     {
       title: "Fiabilité",
@@ -35,43 +35,12 @@ function Collapse({ sections, styleClass, isAccomodationPage }) {
     new Array(dataToDisplay.length).fill(false)
   );
 
-  // pour stocker les hauteurs des collapses
-  const collapseRefs = useRef([]);
-
   //fonction pour basculer l'état d'une section spécifique
   const toggleSection = (index) => {
     setOpenSections((prev) =>
       prev.map((isOpen, i) => (i === index ? !isOpen : isOpen))
     );
   };
-
-  //fonction pour synchroniser la hauteru des p-collapse ouverts
-  useEffect(() => {
-    if (isAccomodationPage) {
-      const syncHeights = () => {
-        const openCollapseElements = collapseRefs.current.filter(
-          (ref, i) => ref && openSections[i]
-        );
-
-        if (openCollapseElements.length === 0) return;
-
-        const maxHeight = Math.max(
-          ...openCollapseElements.map((ref) => ref.scrollHeight)
-        );
-
-        //applique la hauteur max a tous  les collapses ouverts
-        openCollapseElements.forEach((ref) => {
-          ref.style.maxHeight = `${maxHeight}px`;
-        });
-      };
-      syncHeights();
-      window.addEventListener("resize", syncHeights);
-
-      return () => {
-        window.removeEventListener("resize", syncHeights);
-      };
-    }
-  }, [openSections, isAccomodationPage]);
 
   return (
     <div className={`collapses ${styleClass || ""}`}>
@@ -91,15 +60,7 @@ function Collapse({ sections, styleClass, isAccomodationPage }) {
           </div>
 
           {/*contenu du collapse*/}
-          <div
-            ref={(el) => (collapseRefs.current[index] = el)}
-            className={`p-collapse ${openSections[index] ? "open" : ""}`}
-            style={{
-              height: openSections[index] ? "auto" : "0px",
-              overflow: "hidden",
-              transition: "height 0.3s ease-in-out",
-            }}
-          >
+          <div className={`p-collapse ${openSections[index] ? "open" : ""}`}>
             {Array.isArray(section.content) ? (
               <ul>
                 {section.content.map((item, i) => (

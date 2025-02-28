@@ -1,5 +1,4 @@
 //charge les données et transmission à cards.jsx
-
 import Card from "../components/Card";
 import data from "../datas/data.json";
 import "../styles/CardsContainer.scss";

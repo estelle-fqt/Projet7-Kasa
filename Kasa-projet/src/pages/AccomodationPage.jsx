@@ -12,7 +12,7 @@ function AccomodationPage() {
   const { id } = useParams();
   const accomodation = data.find((acc) => acc.id === id);
 
-  //si id n'existe pas = affiche page 404 (if(!accomodation))
+  //si id n'existe pas = affiche page 404
   if (accomodation === undefined) {
     return <NotFoundPage />;
   }
@@ -53,6 +53,7 @@ function AccomodationPage() {
               ))}
             </div>
           </div>
+
           {/* Hôte et note */}
           <div className="host">
             <div className="host-info">
@@ -63,24 +64,17 @@ function AccomodationPage() {
                 alt={host.name}
               />
             </div>
-            <Rating className="rating" rating={rating} />
+            <Rating className="rating" rating={Number(rating)} />
           </div>
         </div>
 
         {/* Collapses dynamiques Description et equipements */}
         <div className="collapses-contain">
           <div>
-            <Collapse
-              sections={sectionsDescription}
-              styleClass="accomodation-collapse"
-              isAccomodationPage={true}
-            />
+            <Collapse sections={sectionsDescription} />
           </div>
           <div>
-            <Collapse
-              sections={sectionsEquipments}
-              styleClass="accomodation-collapse"
-            />
+            <Collapse sections={sectionsEquipments} />
           </div>
         </div>
       </div>

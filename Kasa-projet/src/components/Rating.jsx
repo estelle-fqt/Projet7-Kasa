@@ -1,4 +1,3 @@
-//import "prop-types";
 import PropTypes from "prop-types";
 import starActive from "../assets/starActive.png";
 import starInactive from "../assets/starInactive.png";
@@ -19,7 +18,6 @@ function Rating({ rating }) {
     </div>
   );
 }
-// ajouter les étoiles inactives
 
 Rating.propTypes = {
   rating: PropTypes.number.isRequired,
