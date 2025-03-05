@@ -20,3 +20,9 @@ function Home() {
 }
 
 export default Home;
+
+// banner spécifique grâce aux props
+// chaque composant est indépendant = facilite la maintenance et la réutilisation
+// code clair : simple et lisible
+// facile évolution : si on veut changer apparence d'un composant
+// export permet d'importer composant dans le routeur (Router.jsx)

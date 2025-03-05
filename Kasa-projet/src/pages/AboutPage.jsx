@@ -16,3 +16,9 @@ function AboutPage() {
 }
 
 export default AboutPage;
+
+// banner spécifique grâce aux props
+// collapse style spécifique grâce prop styleClass
+// réutilisation des composants : utilise composants indépendants = facilite maintenance
+// page épurée et modifiable grâce aux collapses
+// gestion apparence dynamique

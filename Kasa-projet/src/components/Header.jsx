@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+//useLocation récupère l'URL actuelle
 import "../styles/Header.scss";
 import logo from "../assets/logoKasa.svg";
 

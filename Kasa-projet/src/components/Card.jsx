@@ -24,3 +24,7 @@ Card.propTypes = {
 };
 
 export default Card;
+
+//prop to définit l'URL de redirection au clic sur la carte
+//"/accomodation/${id}" chaque carte redirige vers une page logement spé en fct de son id
+// grâce a <Link> pas de rechargement = nav + rapide & fluide

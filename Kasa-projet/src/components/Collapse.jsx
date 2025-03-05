@@ -1,10 +1,12 @@
 import { useState } from "react";
+//gère l'état d'ouverture/fermeture des sections
 import "../styles/Collapse.scss";
 import arrow from "../assets/arrowBack.png";
 import PropTypes from "prop-types";
+//définit et valide types des props reçues /le composant
 
 function Collapse({ sections, styleClass }) {
-  //si aucune section fournie,valeurs /défaut
+  //si aucune section fournie, valeurs /défaut
   const defaultSections = [
     {
       title: "Fiabilité",
@@ -28,19 +30,32 @@ function Collapse({ sections, styleClass }) {
     },
   ];
 
-  //utiliser section passées en prop, ou celle /défaut
+  //utiliser section passées en prop, ou sinn celle /défaut
   const dataToDisplay = sections || defaultSections;
 
+  //gestion état d'ouverture des sections
   const [openSections, setOpenSections] = useState(
     new Array(dataToDisplay.length).fill(false)
   );
+  //openSection = tab d'état garde en mé quelle section ouverte/fermée
+  //useState reçoit en val initiale un tab de booléens (false), stocké ds var openSections
+  //dataToDisplay.length = nbr de sections a afficher
+  //new Array crée un tab vide de cette longueur
+  //fill(false) remplit chaque case du tab avc false = ttes sections fermées au départ
+  //setOpenSections = fct màj le tab si clic false-->true
 
-  //fonction pour basculer l'état d'une section spécifique
+  //fonction pour basculer l'état d'ouverture d'une section qd clic dessus
   const toggleSection = (index) => {
     setOpenSections((prev) =>
       prev.map((isOpen, i) => (i === index ? !isOpen : isOpen))
     );
   };
+  //index : index de la section cliquée
+  //setOpenSections màj état des sections
+  //prev = état précédent du tab openSections
+  //map() crée new tab, parcourt chaque élément du tab prev, retourne !isOpen si section cliquée (inversion état), sinn isOpen (conserve état actuel)
+  //Permet ouvrir/fermer une section indépendamment des autres
+  //modif pas directement openSections mais crée copie modifiée = màj immuable
 
   return (
     <div className={`collapses ${styleClass || ""}`}>
@@ -77,6 +92,7 @@ function Collapse({ sections, styleClass }) {
   );
 }
 
+//validation des props
 Collapse.propTypes = {
   sections: PropTypes.arrayOf(
     PropTypes.shape({
@@ -86,7 +102,10 @@ Collapse.propTypes = {
     })
   ),
   styleClass: PropTypes.string,
-  isAccomodationPage: PropTypes.bool,
 };
+//sections doit ê tab d'obj contenant:
+// -title (string, obligatoire)
+// -content (string ou array, obligatoire)
+// styleClass string optionnelle
 
 export default Collapse;

@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+// useParams = hook récupère ID du logement depuis l'url
 import data from "../datas/data.json";
 import "../styles/AccomodationPage.scss";
 import Header from "../components/Header";
@@ -11,11 +12,14 @@ import NotFoundPage from "./NotFoundPage";
 function AccomodationPage() {
   const { id } = useParams();
   const accomodation = data.find((acc) => acc.id === id);
+  // cherche logement correspondant dans data.json
 
   //si id n'existe pas = affiche page 404
   if (accomodation === undefined) {
     return <NotFoundPage />;
   }
+
+  // récuperation données du logement pr les réutiliser dans le rendu
   const {
     title,
     location,
@@ -27,15 +31,15 @@ function AccomodationPage() {
   } = accomodation;
 
   // sections dynamique pour collapse
-  const sectionsDescription = [{ title: "Description", content: description }];
-
-  const sectionsEquipments = [{ title: "Equipements", content: equipments }];
+  const sectionDescription = [{ title: "Description", content: description }];
+  const sectionEquipments = [{ title: "Equipements", content: equipments }];
 
   return (
     <>
       <Header />
+
       <div className="accomodation-container">
-        {/* Galerie d'images */}
+        {/* Carrousel d'images */}
         <Slideshow />
 
         {/* Infos principales */}
@@ -45,6 +49,7 @@ function AccomodationPage() {
             <p>{location}</p>
 
             {/* Tags */}
+            {/* affichage dynamique*/}
             <div className="tags">
               {tags.map((tag, index) => (
                 <span key={index} className="tag">
@@ -71,10 +76,10 @@ function AccomodationPage() {
         {/* Collapses dynamiques Description et equipements */}
         <div className="collapses-contain">
           <div>
-            <Collapse sections={sectionsDescription} />
+            <Collapse sections={sectionDescription} />
           </div>
           <div>
-            <Collapse sections={sectionsEquipments} />
+            <Collapse sections={sectionEquipments} />
           </div>
         </div>
       </div>
@@ -84,3 +89,7 @@ function AccomodationPage() {
 }
 
 export default AccomodationPage;
+
+//réutilisation des composants
+//gestion des erreurs (NotFoundPage)
+//affichage dynamique : contenu généré automatiquement à partir data.json
